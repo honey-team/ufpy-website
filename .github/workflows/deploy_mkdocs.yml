@@ -33,6 +33,5 @@ jobs:
         run: pip install -r requirements.txt
       - run: git pull
       - name: Deploy mike version
-        run: mike deploy --push --update-aliases 0.2 latest
-#      - name: Build mkdocs site
-#        run: mkdocs gh-deploy --force
+        run: mike delete --all
+#        run: mike deploy -p --allow-empty --update-aliases ${{ steps.extract_branch.outputs.branch }} latest
