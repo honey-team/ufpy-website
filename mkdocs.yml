@@ -9,7 +9,7 @@ theme:
   features:
     - content.code.copy
     - content.tooltips
-    - header.autohide
+    - content.code.annotate
     - search.suggest
     - navigation.tabs
     - navigation.tabs.sticky
@@ -19,11 +19,10 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.instant.progress
-    - navigation.instant.prefetch
-    - navigation.instant.preview
     - toc.follow
   icon:
     repo: fontawesome/brands/github
+    annotation: material/plus-circle
     tag:
       typec: material/code-braces
       info: octicons/info-16
