@@ -1,13 +1,8 @@
-name: deploy_mkdocs
-on:
-  push:
-    branches:
-      - master
-      - main
-permissions:
-  contents: write
+name: Branch Deleted
+on: delete
 jobs:
-  deploy:
+  delete:
+    if: github.event.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,10 +10,6 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -32,6 +23,5 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
       - run: git pull
-      - name: Deploy mike version
-#        run: mike delete -p ${{ steps.extract_branch.outputs.branch }}
-        run: mike deploy -p --allow-empty --update-aliases ${{ steps.extract_branch.outputs.branch }} latest
+      - name: Delete mike version
+        run: mike delete -p ${{ github.event.ref }}
