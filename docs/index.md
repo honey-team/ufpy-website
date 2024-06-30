@@ -1,8 +1,12 @@
 ---
 title: Getting started
+description: How to install and use ufpy package.
 
 tags:
   - information
+
+hide:
+  - navigation
 ---
 
 # `ufpy` package

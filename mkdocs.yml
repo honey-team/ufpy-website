@@ -13,7 +13,15 @@ theme:
     - search.suggest
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
     - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.instant.preview
+    - toc.follow
   icon:
     repo: fontawesome/brands/github
     tag:
