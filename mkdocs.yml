@@ -3,31 +3,26 @@ site_url: https://honey-team.github.io/ufpy/
 
 repo_url: https://github.com/honey-team/ufpy
 repo_name: honey-team/ufpy
-edit_uri: edit/main/docs/
 
 theme:
   name: material
   features:
-    - content.action.edit
     - content.code.copy
     - content.tooltips
     - header.autohide
     - search.suggest
   icon:
     repo: fontawesome/brands/github
-    edit: material/pencil
     tag:
       typec: material/code-braces
       info: octicons/info-16
       useful: simple/python
   palette:
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
@@ -44,6 +39,7 @@ extra:
 plugins:
   - search
   - tags
+  - social
 
 markdown_extensions:
   - abbr
