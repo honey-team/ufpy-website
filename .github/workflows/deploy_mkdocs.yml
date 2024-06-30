@@ -32,6 +32,6 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Deploy mike version
-        run: mike deploy --update-aliases 0.1 latest
-      - name: Build mkdocs site
-        run: mkdocs gh-deploy --force
+        run: mike deploy --push --update-aliases 0.1 latest
+#      - name: Build mkdocs site
+#        run: mkdocs gh-deploy --force
