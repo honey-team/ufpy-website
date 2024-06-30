@@ -11,6 +11,9 @@ theme:
     - content.tooltips
     - header.autohide
     - search.suggest
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
   icon:
     repo: fontawesome/brands/github
     tag:

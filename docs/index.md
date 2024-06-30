@@ -63,6 +63,7 @@ button on the left and access the `ufpy` repository using the button on the righ
 
 ## Contribute
 
-You can also contribute to `ufpy` package or `ufpy` docs site. Just go to `ufpy` repository using
-button in right-top of page. For contributing to site you can use `Edit this page` button
-(pencil icon in top of every page).
+You can also contribute to `ufpy` package or `ufpy` docs site. Just 
+[go to `ufpy` repository](https://github.com/honey-team/ufpy) using
+button in right-top of page. For contributing to site you can
+[go to `ufpy-website` repository](https://github.com/honey-team/ufpy-website).
