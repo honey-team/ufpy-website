@@ -34,4 +34,6 @@ jobs:
       - run: git pull
       - name: Deploy mike version
 #        run: mike delete -p ${{ steps.extract_branch.outputs.branch }}
-        run: mike deploy -p --allow-empty --update-aliases ${{ steps.extract_branch.outputs.branch }} latest
+        run: |
+          mike deploy -p --allow-empty --update-aliases ${{ steps.extract_branch.outputs.branch }} latest
+          mike set-default --push main
