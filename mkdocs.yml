@@ -46,6 +46,8 @@ extra:
     information: info
     useful class: useful
     useful feature: useful
+  version:
+    provider: mike
 
 plugins:
   - search
