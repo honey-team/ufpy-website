@@ -15,7 +15,7 @@ tags:
 
     In this documentation KT, VT and CDV will be using in methods.
 
-## class UDict[KT, VT, CDV]
+# class UDict[KT, VT, CDV]
 
 ```py
 class UDict(dictionary: AnyDict[KT, VT]) # (1)!
@@ -42,7 +42,7 @@ getting item, method will return `default`.
     d = UDict(hello=world, hi=python, default=10)
     ```
 
-## (property, settable) dictionary: dict[KT, VT]
+## (property, settable) dictionary: dict[KT, VT] { data-toc-label="dictionary" }
 
 UDict's dictionary.
 
