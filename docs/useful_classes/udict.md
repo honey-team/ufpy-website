@@ -42,7 +42,7 @@ getting item, method will return `default`.
     d = UDict(hello=world, hi=python, default=10)
     ```
 
-## (property, settable) dictionary: dict[KT, VT] { data-toc-label="dictionary" }
+## (property, settable) dictionary: dict[KT, VT]
 
 UDict's dictionary.
 
