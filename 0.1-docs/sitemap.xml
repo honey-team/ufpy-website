@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/generators/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/type_checking/protocols/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/type_checking/type_alias/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/useful_classes/udict/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/useful_classes/ustack/</loc>
-         <lastmod>2024-06-30</lastmod>
+         <lastmod>2024-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
