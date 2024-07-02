@@ -500,72 +500,45 @@ Add dictionary or UDict's dictionary to UDict's dictionary. This method also hav
 *[VT]: Value type
 *[CDV]: Class default value
 
-[//]: # (    def __sub__&#40;self, other: dict[KT, VT] | UDict[KT, VT, CDV]&#41; -> UDict[KT, VT, CDV]:)
+### \_\_sub\_\_(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> UDict[KT, VT, CDV] { data-toc-label="\_\_sub\_\_(other)" }
 
-[//]: # (        new_dict = self.__dict.copy&#40;&#41;)
+Substract dictionary or UDict's dictionary from UDict's dictionary. This method also have `r` and `i` version (`-=`)
 
-[//]: # (        )
-[//]: # (        if isinstance&#40;other, UDict&#41;:)
+!!! example
+    ```py
+    d = UDict(hello=1, hi=2)
+    print(d - {'hello': 1}) # u{'hi': 2}
+    d -= {'hello': 1}
+    print(d) # Same
+    ```
 
-[//]: # (            other: dict[KT, VT] = other.dictionary)
+### \_\_mul\_\_(other: dict[KT, float | int] | UDict[KT, float | int, DV] | float | int) -> UDict[KT, SupportsMul, CDV] { data-toc-label="\_\_mul\_\_(other)" }
 
-[//]: # (        )
-[//]: # (        for k, v in other.items&#40;&#41;:)
+Multiply all values by `other`, if `other` is `#!py int` or `#!py float`.
+Multiply values with keys equals to `other` keys by `other` values, if `other` is `#!py dict` or UDict.
+This method also have `r` and `i` version (`*=`)
 
-[//]: # (            if new_dict.get&#40;k&#41; == v:)
+!!! warning
+    Make sure that your UDict's values supports multiply operator (`*`)
 
-[//]: # (                del new_dict[k])
+!!! example
+    ```py
+    d = UDict(hello=1, hi=2)
+    print(d * 2) # {'hello': 2, 'hi': 4}
+    print(d * {'hi': 3}) # {'hello': 1, 'hi': 6}
+    ```
 
-[//]: # (        return UDict&#40;new_dict&#41;)
+### \_\_truediv\_\_(other: dict[KT, float | int] | UDict[KT, float | int, DV] | float | int) -> UDict[KT, SupportsTrueDiv, CDV] { data-toc-label="\_\_truediv\_\_(other)" }
 
-[//]: # (    )
-[//]: # (    def __mul__&#40;)
+Same that [`__mul__()`](#__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv),
+but with divide operator (`/`).
 
-[//]: # (            self, other: dict[KT, float | int] | UDict[KT, float | int, DV] | float | int)
+!!! warning
+    Make sure that your UDict's values supports divide operator (`/`)
 
-[//]: # (    &#41; -> UDict[KT, VT, CDV]:)
-
-[//]: # (        new_dict = self.__dict.copy&#40;&#41;)
-
-[//]: # (        )
-[//]: # (        if isinstance&#40;other, UDict&#41;:)
-
-[//]: # (            other: dict[KT, VT] = other.dictionary)
-
-[//]: # (        if isinstance&#40;other, &#40;int, float&#41;&#41;:)
-
-[//]: # (            other = dict&#40;[&#40;k, other&#41; for k in new_dict.keys&#40;&#41;]&#41;)
-
-[//]: # (        )
-[//]: # (        for k, v in other.items&#40;&#41;:)
-
-[//]: # (            new_dict[k] *= v)
-
-[//]: # (        )
-[//]: # (        return UDict&#40;new_dict&#41;)
-
-[//]: # ()
-[//]: # (    def __truediv__&#40;)
-
-[//]: # (            self, other: dict[KT, float | int] | UDict[KT, float | int, DV] | float | int)
-
-[//]: # (    &#41; -> UDict[KT, VT, CDV]:)
-
-[//]: # (        new_dict = self.__dict.copy&#40;&#41;)
-
-[//]: # (        )
-[//]: # (        if isinstance&#40;other, UDict&#41;:)
-
-[//]: # (            other: dict[KT, VT] = other.dictionary)
-
-[//]: # (        if isinstance&#40;other, &#40;int, float&#41;&#41;:)
-
-[//]: # (            other = dict&#40;[&#40;k, other&#41; for k in new_dict.keys&#40;&#41;]&#41;)
-
-[//]: # (        )
-[//]: # (        for k, v in other.items&#40;&#41;:)
-
-[//]: # (            new_dict[k] /= v)
-
-[//]: # (        )
-[//]: # (        return UDict&#40;new_dict&#41;)
+!!! example
+    ```py
+    d = UDict(hello=1, hi=2)
+    print(d / 2) # {'hello': 0.5, 'hi': 1}
+    print(d / {'hi': 4}) # {'hello': 1, 'hi': 0.5}
+    ```
