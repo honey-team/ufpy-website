@@ -203,7 +203,7 @@ def get(*, value: VT, default: DV) -> KT | DV
     If you use 0 or 2 or 3 of this arguments (`key`, `index`, `value`), method will raise `ValueError`
 
 Arguments:
-#### `key: KT`
+#### `key: KT` { data-toc-label="key" }
 
 UDict value's key to find.
 
@@ -212,7 +212,7 @@ UDict value's key to find.
     print(d.get(key='key')) # same that d['key']
     ```
 
-#### `index: int`
+#### `index: int` { data-toc-label="index" }
 
 UDict value's index to find
 
@@ -228,7 +228,7 @@ UDict value's index to find
     print(d.get(index=2)) # second value of UDict
     ```
 
-#### `value: VT`
+#### `value: VT` { data-toc-label="value" }
 
 UDict key's value to find
 
@@ -237,7 +237,7 @@ UDict key's value to find
     print(d.get(value=1)) # if d = UDict{'hello': 1}, this will be 'hello'
     ```
 
-#### `default: DV`
+#### `default: DV` { data-toc-label="default" }
 
 Default value, if the result was not found. If not provided, then `default` is `UDict.default` property.
 
@@ -277,12 +277,12 @@ Default value, if the result was not found. If not provided, then `default` is `
 
 Currently, UDict supports all these magic methods:
 
-### _\_call__(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV] { data-toc-label="__call__(func)" }
+### \_\_call\_\_(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV] { data-toc-label="\_\_call\_\_(func)" }
 
 Returns new UDict, but all values generated with `func` function. First argument: key, second: value.
 
 Arguments:
-#### `func: (KT, VT) -> VT`
+#### `func: (KT, VT) -> VT` { data-toc-label="func" }
 
 First argument of function is key, second is value. Returns new value
     
@@ -294,7 +294,7 @@ First argument of function is key, second is value. Returns new value
     d = d(f) # multiply all values by 2
     ```
 
-### _\_neg__() -> UDict[KT, int | float, CDV] { data-toc-label="__neg__()" }
+### \_\_neg\_\_() -> UDict[KT, int | float, CDV] { data-toc-label="\_\_neg\_\_()" }
 
 Does all values (if they support `-` operator) to they's opposite numbers.
 
@@ -304,7 +304,7 @@ Does all values (if they support `-` operator) to they's opposite numbers.
     print(-d) # u{'hello': -1, 'hi': 2}
     ```
 
-### _\_invert__() -> UDict[KT, VT, CDV] { data-toc-label="__invert__()" }
+### \_\_invert\_\_() -> UDict[KT, VT, CDV] { data-toc-label="\_\_invert\_\_()" }
 
 The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
 
@@ -313,7 +313,7 @@ The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
     print(~d)
     ```
 
-### _\_reversed__() -> UDict[KT, VT, CDV] { data-toc-label="__reversed__()" }
+### \_\_reversed\_\_() -> UDict[KT, VT, CDV] { data-toc-label="\_\_reversed\_\_()" }
 
 The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
 
@@ -322,12 +322,12 @@ The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
     print(reversed(d))
     ```
 
-### _\_getitem__(key: KT | int | slice) -> UDict[KT, VT, DV] | VT { data-toc-label="__getitem__(key)" }
+### \_\_getitem\_\_(key: KT | int | slice) -> UDict[KT, VT, DV] | VT { data-toc-label="\_\_getitem\_\_(key)" }
 
 Returns value for one key, or UDict for multiply keys provided with slice.
 
 Arguments:
-#### `key: KT | int | slice`
+#### `key: KT | int | slice` { data-toc-label="key" }
 
 Value's key or index to get or values's indexes slice to get.
 
@@ -364,15 +364,15 @@ Value's key or index to get or values's indexes slice to get.
         print(d[:3:2]) # u{'hello': 1, 'world': 9}
         ```
 
-### _\_setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="__setitem__(key, value)" }
+### \_\_setitem\_\_(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="\_\_setitem\_\_(key, value)" }
 
 Sets value or values to given key or keys.
 
-#### `key: KT | int | slice`
+#### `key: KT | int | slice` { data-toc-label="key" }
 
 Value's key or keys to set. This argument is the same with [`key` argument in `#!py __getitem__()` method](#key-kt-int-slice)
 
-#### `value: VT | list[VT] | tuple[VT]`
+#### `value: VT | list[VT] | tuple[VT]` { data-toc-label="value" }
 
 Value or values to set.
 
@@ -385,15 +385,15 @@ Value or values to set.
     print(d) # u{'hello': 'hello', 'hi': 'world'}
     ```
 
-### _\_delitem__(key: KT | int | slice) { data-toc-label="__delitem__(key)" }
+### \_\_delitem\_\_(key: KT | int | slice) { data-toc-label="\_\_delitem\_\_(key)" }
 
 Deletes items with given key or keys
 
-#### `key: KT | int | slice`
+#### `key: KT | int | slice` { data-toc-label="key" }
 
 Item 's key or keys to delete. This argument is the same with [`key` argument in `#!py __getitem__()` method](#key-kt-int-slice)
 
-### _\_len__() -> int { data-toc-label="__len__()" }
+### \_\_len\_\_() -> int { data-toc-label="\_\_len\_\_()" }
 
 Returns length of UDict
 
@@ -401,7 +401,7 @@ Returns length of UDict
     d = UDict(hello=1, hi=2)
     print(len(d)) # 2
 
-### _\_iter__() -> Iterator[tuple[KT, VT]] { data-toc-label="__iter__()" }
+### \_\_iter\_\_() -> Iterator[tuple[KT, VT]] { data-toc-label="\_\_iter\_\_()" }
 
 Iterate UDict. The equivalent of `#!py items.__iter__()`.
 
@@ -411,7 +411,7 @@ Iterate UDict. The equivalent of `#!py items.__iter__()`.
         print(f"Key: {k}\nValue: {v}") # Prints all keys and its values.
     ```
 
-### _\_bool__() -> bool { data-toc-label="__bool__()" }
+### \_\_bool\_\_() -> bool { data-toc-label="\_\_bool\_\_()" }
 
 Returns that UDict is not empty. The equivalent of `#!py not is_empty()`
 
@@ -422,9 +422,13 @@ Returns that UDict is not empty. The equivalent of `#!py not is_empty()`
         print("D is not empty!")
     ```
 
-### _\_contains__(item: tuple[KT, VT] | list[KT | VT] | KT) -> bool
+### \_\_contains\_\_(item: tuple[KT, VT] | list[KT | VT] | KT) -> bool { data-toc-label="\_\_contains\_\_(item)" }
 
 Check that item or key in UDict.
+
+Arguments:
+#### item: tuple[KT, VT] | list[KT | VT] | KT { data-toc-label="item" }
+Item or item's key.
 
 !!! example
     ```py
@@ -433,7 +437,7 @@ Check that item or key in UDict.
     if 'key' in d: ...
     ```
 
-### _\_repr__() -> str
+### \_\_repr\_\_() -> str { data-toc-label="\_\_repr\_\_()" }
 
 Returns string presentation of UDict. Because of it, UDict can be used in `#!py print()` and `#!py repr()`
 
@@ -444,11 +448,11 @@ Returns string presentation of UDict. Because of it, UDict can be used in `#!py 
     print(repr(d)) # Same
     ```
 
-### _\_hash__() -> int
+### \_\_hash\_\_() -> int { data-toc-label="\_\_hash\_\_()" }
 
 Returns hash for `#!py repr(UDict)`. The equivalent of `#!py repr(UDict).__hash__()`
 
-### _\_cmp__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> int
+### \_\_cmp\_\_(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> int { data-toc-label="\_\_cmp\_\_(other)" }
 
 Used by `#!py @cmp_generator`, which generates compare magic methods, like `==`, `!=`, `>`, `>=`, `<`, `<=` operators.
 
@@ -463,7 +467,7 @@ Comparing UDicts is comparing their lengths, except of [`#!py __eq__()`]().
     print(d > d2) # False
     ```
 
-### _\_eq__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> bool
+### \_\_eq\_\_(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> bool { data-toc-label="\_\_eq\_\_(other)" }
 
 Checks that UDicts are same. (Overrides generated by `#!py @cmp_generator` magic method)
 
@@ -481,7 +485,7 @@ Checks that UDicts are same. (Overrides generated by `#!py @cmp_generator` magic
     print(d == {'hello': 1}) # True
     ```
 
-### _\_add__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> UDict[KT, VT, CDV]
+### \_\_add\_\_(other: dict[KT, VT] | UDict[KT, VT, CDV]) -> UDict[KT, VT, CDV] { data-toc-label="\_\_add\_\_(other)" }
 
 Add dictionary or UDict's dictionary to UDict's dictionary. This method also have `r` and `i` version (`+=`)
 
