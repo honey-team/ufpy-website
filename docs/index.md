@@ -18,11 +18,12 @@ Ufpy (Useful Python) - is a package for simplifying Python programs using many u
 Now Ufpy has these features:
 
 - [`UDict`](useful_classes/udict.md "Useful dict.").
-- [`UStack`](useful_classes/ustack.md "Useful stack.").
+- [`uSTL` package](uSTL/index.md).
+    - [`Stack`](uSTL/stack.md).
 - Generators of classes methods:
-    - [`cmp_generator`](generators.md "Compare generator. In latest python version were deleted __cmp__ method. With this generator you can use __cmp__ in your class")
-    - [`r_generator`](generators.md "Reverse generator. Generating __r...__ methods for math operations")
-    - [`i_generator`](generators.md "I methods generator. Generating __i...__ method for math operations")
+    - [`cmp_generator`](useful_features/generators.md "Compare generator. In latest python version were deleted __cmp__ method. With this generator you can use __cmp__ in your class")
+    - [`r_generator`](useful_features/generators.md "Reverse generator. Generating __r...__ methods for math operations")
+    - [`i_generator`](useful_features/generators.md "I methods generator. Generating __i...__ method for math operations")
 - [many protocols for type hinting.](type_checking/protocols.md)
 - [many type alias for type hinting.](type_checking/type_alias.md)
 

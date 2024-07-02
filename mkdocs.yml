@@ -6,6 +6,7 @@ repo_name: honey-team/ufpy
 
 theme:
   name: material
+  logo: assets/images/logo.png
   features:
     - content.code.copy
     - content.tooltips
