@@ -1,19 +1,9 @@
 ---
-title: UDict
+title: UDict[KT, VT, CDV]
 
 tags:
   - useful class
 ---
-
-# `UDict` class
-
-!!! note "UDict as generic"
-    You can use `UDict` as `Generic`, because of it, there are 3 `TypeVar`s: KT, VT, CDV.
-
-    KT and VT is key type and value type. In inbuilt `dict` there are KT and VT type vars.
-    CDV is class defaul value.
-
-    In this documentation KT, VT and CDV will be using in methods.
 
 # class UDict[KT, VT, CDV]
 
@@ -34,6 +24,14 @@ class UDict(*, default: CDV, **kwargs: VT)
 
 ---
 
+!!! note "UDict as generic"
+    You can use `UDict` as `Generic`, because of it, there are 3 `TypeVar`s: KT, VT, CDV.
+
+    KT and VT is key type and value type. In inbuilt `dict` there are KT and VT type vars.
+    CDV is class defaul value.
+
+    In this documentation KT, VT and CDV will be using in methods.
+
 Create UDict object. If `default`, when not existent keys is given in
 getting item, method will return `default`.
 
@@ -42,7 +40,7 @@ getting item, method will return `default`.
     d = UDict(hello=world, hi=python, default=10)
     ```
 
-## (property, settable) dictionary: dict[KT, VT]
+## (property, settable) dictionary: dict[KT, VT] { data-toc-label="dictionary" }
 
 UDict's dictionary.
 
@@ -60,7 +58,7 @@ UDict's dictionary.
         d.dictionary = UDict({1: 7})
         ```
 
-## (property, settable) keys: list[KT]
+## (property, settable) keys: list[KT] { data-toc-label="keys" }
 
 UDict's keys
 
@@ -78,7 +76,7 @@ UDict's keys
         d.keys = 1, 2
         ```
 
-## (property, settable) values: list[VT]
+## (property, settable) values: list[VT] { data-toc-label="values" }
 
 UDict's values
 
@@ -96,7 +94,7 @@ UDict's values
         d.values = 7, 2
         ```
 
-## (property, settable) items: list[tuple[KT, VT]]
+## (property, settable) items: list[tuple[KT, VT]] { data-toc-label="items" }
 
 UDict's items.
 
@@ -115,7 +113,7 @@ UDict's items.
         d.items = [1, 7], [2, 2]
         ```
 
-## (property, settable) default: CDV
+## (property, settable) default: CDV { data-toc-label="default" }
 
 UDict's default value
 
@@ -125,7 +123,7 @@ UDict's default value
     d.default = 'null'
     ```
 
-## reverse() -> UDict[KT, VT, CDV]
+## reverse() -> UDict[KT, VT, CDV] { data-toc-label="reverse()" }
 
 Reverses UDict and returns it. (1)
 { .annotate }
@@ -144,7 +142,7 @@ Reverses UDict and returns it. (1)
     print(d) # prints reversed UDict
     ```
 
-## reversed() -> UDict[KT, VT, CDV]
+## reversed() -> UDict[KT, VT, CDV] { data-toc-label="reversed()" }
 
 Returns reversed UDict
 
@@ -163,7 +161,7 @@ Returns reversed UDict
         ```
     [Read more about `#!py reversed()` and `#!py ~` support in UDict](#__invert__-udictkt-vt-cdv)
 
-## sort() -> UDict[KT, VT, CDV]
+## sort() -> UDict[KT, VT, CDV] { data-toc-label="sort()" }
 
 Sorts UDict and returns it. (1)
 { .annotate }
@@ -181,7 +179,7 @@ Sorts UDict and returns it. (1)
     print(d.sort())
     ```
 
-## sorted() -> UDict[KT, VT, CDV]
+## sorted() -> UDict[KT, VT, CDV] { data-toc-label="sorted()" }
 
 Returns sorted UDict
 
@@ -190,7 +188,7 @@ Returns sorted UDict
     print(d.sorted())
     ```
 
-##  get()
+##  get() { data-toc-label="get(*, key, index, value, default)" }
 
 ```py
 def get(*, key: KT) -> VT | CDV
@@ -250,7 +248,7 @@ Default value, if the result was not found. If not provided, then `default` is `
     print(d.get(key='hell', default=None)) # None
     ```
 
-## is_empty() -> bool
+## is_empty() -> bool { data-toc-label="is_empty()" }
 
 `#!py True` if `len(UDict) == 0` else `#!py False`
 
@@ -279,7 +277,7 @@ Default value, if the result was not found. If not provided, then `default` is `
 
 Currently, UDict supports all these magic methods:
 
-### _\_call__(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV]
+### _\_call__(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV] { data-toc-label="__call__(func)" }
 
 Returns new UDict, but all values generated with `func` function. First argument: key, second: value.
 
@@ -296,7 +294,7 @@ First argument of function is key, second is value. Returns new value
     d = d(f) # multiply all values by 2
     ```
 
-### _\_neg__() -> UDict[KT, int | float, CDV]
+### _\_neg__() -> UDict[KT, int | float, CDV] { data-toc-label="__neg__()" }
 
 Does all values (if they support `-` operator) to they's opposite numbers.
 
@@ -306,7 +304,7 @@ Does all values (if they support `-` operator) to they's opposite numbers.
     print(-d) # u{'hello': -1, 'hi': 2}
     ```
 
-### _\_invert__() -> UDict[KT, VT, CDV]
+### _\_invert__() -> UDict[KT, VT, CDV] { data-toc-label="__invert__()" }
 
 The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
 
@@ -315,7 +313,7 @@ The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
     print(~d)
     ```
 
-### _\_reversed__() -> UDict[KT, VT, CDV]
+### _\_reversed__() -> UDict[KT, VT, CDV] { data-toc-label="__reversed__()" }
 
 The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
 
@@ -324,7 +322,7 @@ The equivalent of [`#!py reversed()`](#reversed-udictkt-vt-cdv)
     print(reversed(d))
     ```
 
-### _\_getitem__(key: KT | int | slice) -> UDict[KT, VT, DV] | VT
+### _\_getitem__(key: KT | int | slice) -> UDict[KT, VT, DV] | VT { data-toc-label="__getitem__(key)" }
 
 Returns value for one key, or UDict for multiply keys provided with slice.
 
@@ -366,7 +364,7 @@ Value's key or index to get or values's indexes slice to get.
         print(d[:3:2]) # u{'hello': 1, 'world': 9}
         ```
 
-### _\_setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT])
+### _\_setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="__setitem__(key, value)" }
 
 Sets value or values to given key or keys.
 
@@ -387,7 +385,7 @@ Value or values to set.
     print(d) # u{'hello': 'hello', 'hi': 'world'}
     ```
 
-### _\_delitem__(key: KT | int | slice)
+### _\_delitem__(key: KT | int | slice) { data-toc-label="__delitem__(key)" }
 
 Deletes items with given key or keys
 
@@ -395,7 +393,7 @@ Deletes items with given key or keys
 
 Item 's key or keys to delete. This argument is the same with [`key` argument in `#!py __getitem__()` method](#key-kt-int-slice)
 
-### _\_len__() -> int
+### _\_len__() -> int { data-toc-label="__len__()" }
 
 Returns length of UDict
 
@@ -403,7 +401,7 @@ Returns length of UDict
     d = UDict(hello=1, hi=2)
     print(len(d)) # 2
 
-### _\_iter__() -> Iterator[tuple[KT, VT]]
+### _\_iter__() -> Iterator[tuple[KT, VT]] { data-toc-label="__iter__()" }
 
 Iterate UDict. The equivalent of `#!py items.__iter__()`.
 
@@ -413,7 +411,7 @@ Iterate UDict. The equivalent of `#!py items.__iter__()`.
         print(f"Key: {k}\nValue: {v}") # Prints all keys and its values.
     ```
 
-### _\_bool__() -> bool
+### _\_bool__() -> bool { data-toc-label="__bool__()" }
 
 Returns that UDict is not empty. The equivalent of `#!py not is_empty()`
 
