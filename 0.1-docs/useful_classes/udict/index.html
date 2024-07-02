@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
       
@@ -942,6 +942,60 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#__contains__item-tuplekt-vt-listkt-vt-kt-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __contains__(item: tuple[KT, VT] | list[KT | VT] | KT) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__repr__-str" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__() -&gt; str
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__hash__-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      __hash__() -&gt; int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__cmp__other-dictkt-vt-udictkt-vt-cdv-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      __cmp__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__eq__other-dictkt-vt-udictkt-vt-cdv-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __eq__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__add__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __add__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; UDict[KT, VT, CDV]
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1315,6 +1369,60 @@
   <a href="#__bool__-bool-data-toc-labelbool" class="md-nav__link">
     <span class="md-ellipsis">
       __bool__() -&gt; bool { data-toc-label="bool()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__contains__item-tuplekt-vt-listkt-vt-kt-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __contains__(item: tuple[KT, VT] | list[KT | VT] | KT) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__repr__-str" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__() -&gt; str
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__hash__-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      __hash__() -&gt; int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__cmp__other-dictkt-vt-udictkt-vt-cdv-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      __cmp__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__eq__other-dictkt-vt-udictkt-vt-cdv-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __eq__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__add__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __add__(other: dict[KT, VT] | UDict[KT, VT, CDV]) -&gt; UDict[KT, VT, CDV]
     </span>
   </a>
   
@@ -1732,6 +1840,63 @@ print(len(d)) # 2</p>
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D is not empty!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
+<h3 id="__contains__item-tuplekt-vt-listkt-vt-kt-bool">__contains__(item: tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | list[<abbr title="Key type">KT</abbr> | <abbr title="Value type">VT</abbr>] | <abbr title="Key type">KT</abbr>) -&gt; bool</h3>
+<p>Check that item or key in UDict.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">if</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">if</span> <span class="s1">&#39;key&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+</span></code></pre></div>
+</div>
+<h3 id="__repr__-str">__repr__() -&gt; str</h3>
+<p>Returns string presentation of UDict. Because of it, UDict can be used in <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> and <code class="language-py highlight"><span class="nb">repr</span><span class="p">()</span></code></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: 1}</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="c1"># Same</span>
+</span></code></pre></div>
+</div>
+<h3 id="__hash__-int">__hash__() -&gt; int</h3>
+<p>Returns hash for <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span></code>. The equivalent of <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span></code></p>
+<h3 id="__cmp__other-dictkt-vt-udictkt-vt-cdv-int">__cmp__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; int</h3>
+<p>Used by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code>, which generates compare magic methods, like <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> operators.</p>
+<p>Comparing UDicts is comparing their lengths, except of <a href=""><code class="language-py highlight"><span class="fm">__eq__</span><span class="p">()</span></code></a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">d2</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
+</span></code></pre></div>
+</div>
+<h3 id="__eq__other-dictkt-vt-udictkt-vt-cdv-bool">__eq__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; bool</h3>
+<p>Checks that UDicts are same. (Overrides generated by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code> magic method)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">d2</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="c1"># True</span>
+</span></code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use dict to compare with UDict. Method will automatically generate UDict from this dict
+<div class="language-py highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># True</span>
+</span></code></pre></div></p>
+</div>
+<h3 id="__add__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv">__add__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
+<p>Add dictionary or UDict's dictionary to UDict's dictionary. This method also have <code>r</code> and <code>i</code> version (<code>+=</code>)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">({</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">d</span> <span class="o">+=</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span></code></pre></div>
+</div>
 
 
 
@@ -1792,7 +1957,7 @@ print(len(d)) # 2</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.tooltips", "content.code.annotate", "search.suggest", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "tags": {"information": "info", "type check": "typec", "useful class": "useful", "useful feature": "useful"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
