@@ -27,6 +27,7 @@ theme:
       typec: material/code-braces
       info: octicons/info-16
       useful: simple/python
+      ustl: material/language-cpp
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -45,6 +46,7 @@ extra:
     information: info
     useful class: useful
     useful feature: useful
+    uSTL: ustl
   version:
     provider: mike
 
@@ -62,6 +64,7 @@ markdown_extensions:
       line_spans: __span
       use_pygments: true
       pygments_lang_class: true
+  - pymdownx.critic
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
