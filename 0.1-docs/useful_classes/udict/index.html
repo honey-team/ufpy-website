@@ -1011,6 +1011,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#__sub__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __sub__(other)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __mul__(other)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__truediv__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportstruediv-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __truediv__(other)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1453,6 +1480,33 @@
   <a href="#__add__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv" class="md-nav__link">
     <span class="md-ellipsis">
       __add__(other)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__sub__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __sub__(other)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __mul__(other)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__truediv__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportstruediv-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      __truediv__(other)
     </span>
   </a>
   
@@ -1928,6 +1982,45 @@ print(len(d)) # 2</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">({</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">d</span> <span class="o">+=</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<h3 id="__sub__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv">__sub__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
+<p>Substract dictionary or UDict's dictionary from UDict's dictionary. This method also have <code>r</code> and <code>i</code> version (<code>-=</code>)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># u{&#39;hi&#39;: 2}</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="n">d</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># Same</span>
+</span></code></pre></div>
+</div>
+<h3 id="__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv">__mul__(other: dict[<abbr title="Key type">KT</abbr>, float | int] | UDict[<abbr title="Key type">KT</abbr>, float | int, DV] | float | int) -&gt; UDict[<abbr title="Key type">KT</abbr>, SupportsMul, <abbr title="Class default value">CDV</abbr>]</h3>
+<p>Multiply all values by <code>other</code>, if <code>other</code> is <code class="language-py highlight"><span class="nb">int</span></code> or <code class="language-py highlight"><span class="nb">float</span></code>.
+Multiply values with keys equals to <code>other</code> keys by <code>other</code> values, if <code>other</code> is <code class="language-py highlight"><span class="nb">dict</span></code> or UDict.
+This method also have <code>r</code> and <code>i</code> version (<code>*=</code>)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that your UDict's values supports multiply operator (<code>*</code>)</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 2, &#39;hi&#39;: 4}</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 6}</span>
+</span></code></pre></div>
+</div>
+<h3 id="__truediv__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportstruediv-cdv">__truediv__(other: dict[<abbr title="Key type">KT</abbr>, float | int] | UDict[<abbr title="Key type">KT</abbr>, float | int, DV] | float | int) -&gt; UDict[<abbr title="Key type">KT</abbr>, SupportsTrueDiv, <abbr title="Class default value">CDV</abbr>]</h3>
+<p>Same that <a href="#__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv"><code>__mul__()</code></a>,
+but with divide operator (<code>/</code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that your UDict's values supports divide operator (<code>/</code>)</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 0.5, &#39;hi&#39;: 1}</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 0.5}</span>
 </span></code></pre></div>
 </div>
 
