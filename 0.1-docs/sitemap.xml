@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://honey-team.github.io/ufpy/0.1-docs/uSTL/stack/</loc>
+         <lastmod>2024-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://honey-team.github.io/ufpy/0.1-docs/useful_classes/udict/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
