@@ -22,7 +22,7 @@
     
     
       
-        <title>UDict - Useful python (ufpy)</title>
+        <title>UDict[KT, VT, CDV] - Useful python (ufpy)</title>
       
     
     
@@ -86,7 +86,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="UDict - Useful python (ufpy)" >
+        <meta  property="og:title"  content="UDict[KT, VT, CDV] - Useful python (ufpy)" >
       
         <meta  property="og:description"  content="None" >
       
@@ -102,7 +102,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="UDict - Useful python (ufpy)" >
+        <meta  name="twitter:title"  content="UDict[KT, VT, CDV] - Useful python (ufpy)" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -129,7 +129,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#udict-class" class="md-skip">
+        <a href="#class-udictkt-vt-cdv" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UDict
+              UDict[KT, VT, CDV]
             
           </span>
         </div>
@@ -596,15 +596,360 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UDict[KT, VT, CDV]
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    UDict
+    UDict[KT, VT, CDV]
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-dictionary-dictkt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      dictionary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-keys-listkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-values-listvt" class="md-nav__link">
+    <span class="md-ellipsis">
+      values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-items-listtuplekt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-default-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      default
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      reverse()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reversed-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      reversed()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorted-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      sorted()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get(*, key, index, value, default)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get(*, key, index, value, default)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      index: int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      value: VT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-dv" class="md-nav__link">
+    <span class="md-ellipsis">
+      default: DV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_empty-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magic methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__call__func-callablekt-vt-vt-udictkt-vt-cdv-data-toc-labelcallfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      __call__(func: Callable[[KT, VT], VT]) -&gt; UDict[KT, VT, CDV] { data-toc-label="call(func)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__call__(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV] { data-toc-label="call(func)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#func-kt-vt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      func: (KT, VT) -&gt; VT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__neg__-udictkt-int-float-cdv-data-toc-labelneg" class="md-nav__link">
+    <span class="md-ellipsis">
+      __neg__() -&gt; UDict[KT, int | float, CDV] { data-toc-label="neg()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__invert__-udictkt-vt-cdv-data-toc-labelinvert" class="md-nav__link">
+    <span class="md-ellipsis">
+      __invert__() -&gt; UDict[KT, VT, CDV] { data-toc-label="invert()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__reversed__-udictkt-vt-cdv-data-toc-labelreversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reversed__() -&gt; UDict[KT, VT, CDV] { data-toc-label="reversed()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__getitem__key-kt-int-slice-udictkt-vt-dv-vt-data-toc-labelgetitemkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      __getitem__(key: KT | int | slice) -&gt; UDict[KT, VT, DV] | VT { data-toc-label="getitem(key)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__getitem__(key: KT | int | slice) -> UDict[KT, VT, DV] | VT { data-toc-label="getitem(key)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__setitem__key-kt-int-slice-value-vt-listvt-tuplevt-data-toc-labelsetitemkey-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      __setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="setitem(key, value)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="setitem(key, value)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vt-listvt-tuplevt" class="md-nav__link">
+    <span class="md-ellipsis">
+      value: VT | list[VT] | tuple[VT]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__delitem__key-kt-int-slice-data-toc-labeldelitemkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      __delitem__(key: KT | int | slice) { data-toc-label="delitem(key)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__delitem__(key: KT | int | slice) { data-toc-label="delitem(key)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__-int-data-toc-labellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__() -&gt; int { data-toc-label="len()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__iter__-iteratortuplekt-vt-data-toc-labeliter" class="md-nav__link">
+    <span class="md-ellipsis">
+      __iter__() -&gt; Iterator[tuple[KT, VT]] { data-toc-label="iter()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__bool__-bool-data-toc-labelbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __bool__() -&gt; bool { data-toc-label="bool()" }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -659,6 +1004,329 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-dictionary-dictkt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      dictionary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-keys-listkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-values-listvt" class="md-nav__link">
+    <span class="md-ellipsis">
+      values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-items-listtuplekt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-settable-default-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      default
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      reverse()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reversed-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      reversed()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorted-udictkt-vt-cdv" class="md-nav__link">
+    <span class="md-ellipsis">
+      sorted()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get(*, key, index, value, default)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get(*, key, index, value, default)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      index: int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      value: VT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-dv" class="md-nav__link">
+    <span class="md-ellipsis">
+      default: DV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_empty-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magic methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__call__func-callablekt-vt-vt-udictkt-vt-cdv-data-toc-labelcallfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      __call__(func: Callable[[KT, VT], VT]) -&gt; UDict[KT, VT, CDV] { data-toc-label="call(func)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__call__(func: Callable[[KT, VT], VT]) -> UDict[KT, VT, CDV] { data-toc-label="call(func)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#func-kt-vt-vt" class="md-nav__link">
+    <span class="md-ellipsis">
+      func: (KT, VT) -&gt; VT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__neg__-udictkt-int-float-cdv-data-toc-labelneg" class="md-nav__link">
+    <span class="md-ellipsis">
+      __neg__() -&gt; UDict[KT, int | float, CDV] { data-toc-label="neg()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__invert__-udictkt-vt-cdv-data-toc-labelinvert" class="md-nav__link">
+    <span class="md-ellipsis">
+      __invert__() -&gt; UDict[KT, VT, CDV] { data-toc-label="invert()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__reversed__-udictkt-vt-cdv-data-toc-labelreversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reversed__() -&gt; UDict[KT, VT, CDV] { data-toc-label="reversed()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__getitem__key-kt-int-slice-udictkt-vt-dv-vt-data-toc-labelgetitemkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      __getitem__(key: KT | int | slice) -&gt; UDict[KT, VT, DV] | VT { data-toc-label="getitem(key)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__getitem__(key: KT | int | slice) -> UDict[KT, VT, DV] | VT { data-toc-label="getitem(key)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__setitem__key-kt-int-slice-value-vt-listvt-tuplevt-data-toc-labelsetitemkey-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      __setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="setitem(key, value)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__setitem__(key: KT | int | slice, value: VT | list[VT] | tuple[VT]) { data-toc-label="setitem(key, value)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vt-listvt-tuplevt" class="md-nav__link">
+    <span class="md-ellipsis">
+      value: VT | list[VT] | tuple[VT]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__delitem__key-kt-int-slice-data-toc-labeldelitemkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      __delitem__(key: KT | int | slice) { data-toc-label="delitem(key)" }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__delitem__(key: KT | int | slice) { data-toc-label="delitem(key)" }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-kt-int-slice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      key: KT | int | slice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__-int-data-toc-labellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__() -&gt; int { data-toc-label="len()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__iter__-iteratortuplekt-vt-data-toc-labeliter" class="md-nav__link">
+    <span class="md-ellipsis">
+      __iter__() -&gt; Iterator[tuple[KT, VT]] { data-toc-label="iter()" }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__bool__-bool-data-toc-labelbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      __bool__() -&gt; bool { data-toc-label="bool()" }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -691,14 +1359,6 @@
   
 
 
-<h1 id="udict-class"><code>UDict</code> class</h1>
-<div class="admonition note">
-<p class="admonition-title">UDict as generic</p>
-<p>You can use <code>UDict</code> as <code>Generic</code>, because of it, there are 3 <code>TypeVar</code>s: <abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>.</p>
-<p><abbr title="Key type">KT</abbr> and <abbr title="Value type">VT</abbr> is key type and value type. In inbuilt <code>dict</code> there are <abbr title="Key type">KT</abbr> and <abbr title="Value type">VT</abbr> type vars.
-<abbr title="Class default value">CDV</abbr> is class defaul value.</p>
-<p>In this documentation <abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr> and <abbr title="Class default value">CDV</abbr> will be using in methods.</p>
-</div>
 <h1 id="class-udictkt-vt-cdv">class UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h1>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">UDict</span><span class="p">(</span><span class="n">dictionary</span><span class="p">:</span> <span class="n">AnyDict</span><span class="p">[</span><span class="n">KT</span><span class="p">,</span> <span class="n">VT</span><span class="p">])</span> <span class="c1"># (1)!</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span> <span class="nc">UDict</span><span class="p">(</span><span class="n">dictionary</span><span class="p">:</span> <span class="n">AnyDict</span><span class="p">[</span><span class="n">KT</span><span class="p">,</span> <span class="n">VT</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">CDV</span><span class="p">)</span>
@@ -717,6 +1377,13 @@
 </li>
 </ol>
 <hr />
+<div class="admonition note">
+<p class="admonition-title">UDict as generic</p>
+<p>You can use <code>UDict</code> as <code>Generic</code>, because of it, there are 3 <code>TypeVar</code>s: <abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>.</p>
+<p><abbr title="Key type">KT</abbr> and <abbr title="Value type">VT</abbr> is key type and value type. In inbuilt <code>dict</code> there are <abbr title="Key type">KT</abbr> and <abbr title="Value type">VT</abbr> type vars.
+<abbr title="Class default value">CDV</abbr> is class defaul value.</p>
+<p>In this documentation <abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr> and <abbr title="Class default value">CDV</abbr> will be using in methods.</p>
+</div>
 <p>Create UDict object. If <code>default</code>, when not existent keys is given in
 getting item, method will return <code>default</code>.</p>
 <div class="admonition example">
@@ -946,7 +1613,7 @@ of <code class="language-py highlight"><span class="k">if</span> <span class="nb
 </div>
 <h2 id="magic-methods">Magic methods</h2>
 <p>Currently, UDict supports all these magic methods:</p>
-<h3 id="__call__func-callablekt-vt-vt-udictkt-vt-cdv">__call__(func: Callable[[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>], <abbr title="Value type">VT</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
+<h3 id="__call__func-callablekt-vt-vt-udictkt-vt-cdv-data-toc-labelcallfunc">__call__(func: Callable[[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>], <abbr title="Value type">VT</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>] { data-toc-label="<strong>call</strong>(func)" }</h3>
 <p>Returns new UDict, but all values generated with <code>func</code> function. First argument: key, second: value.</p>
 <p>Arguments:</p>
 <h4 id="func-kt-vt-vt"><code>func: (KT, VT) -&gt; VT</code></h4>
@@ -958,7 +1625,7 @@ of <code class="language-py highlight"><span class="k">if</span> <span class="nb
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># multiply all values by 2</span>
 </span></code></pre></div>
 </div>
-<h3 id="__neg__-udictkt-int-float-cdv">__neg__() -&gt; UDict[<abbr title="Key type">KT</abbr>, int | float, <abbr title="Class default value">CDV</abbr>]</h3>
+<h3 id="__neg__-udictkt-int-float-cdv-data-toc-labelneg">__neg__() -&gt; UDict[<abbr title="Key type">KT</abbr>, int | float, <abbr title="Class default value">CDV</abbr>] { data-toc-label="<strong>neg</strong>()" }</h3>
 <p>Does all values (if they support <code>-</code> operator) to they's opposite numbers.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -966,21 +1633,21 @@ of <code class="language-py highlight"><span class="k">if</span> <span class="nb
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: -1, &#39;hi&#39;: 2}</span>
 </span></code></pre></div>
 </div>
-<h3 id="__invert__-udictkt-vt-cdv">__invert__() -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
+<h3 id="__invert__-udictkt-vt-cdv-data-toc-labelinvert">__invert__() -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>] { data-toc-label="<strong>invert</strong>()" }</h3>
 <p>The equivalent of <a href="#reversed-udictkt-vt-cdv"><code class="language-py highlight"><span class="nb">reversed</span><span class="p">()</span></code></a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="o">~</span><span class="n">d</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
-<h3 id="__reversed__-udictkt-vt-cdv">__reversed__() -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
+<h3 id="__reversed__-udictkt-vt-cdv-data-toc-labelreversed">__reversed__() -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>] { data-toc-label="<strong>reversed</strong>()" }</h3>
 <p>The equivalent of <a href="#reversed-udictkt-vt-cdv"><code class="language-py highlight"><span class="nb">reversed</span><span class="p">()</span></code></a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
 </span></code></pre></div>
 </div>
-<h3 id="__getitem__key-kt-int-slice-udictkt-vt-dv-vt">__getitem__(key: <abbr title="Key type">KT</abbr> | int | slice) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, DV] | <abbr title="Value type">VT</abbr></h3>
+<h3 id="__getitem__key-kt-int-slice-udictkt-vt-dv-vt-data-toc-labelgetitemkey">__getitem__(key: <abbr title="Key type">KT</abbr> | int | slice) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, DV] | <abbr title="Value type">VT</abbr> { data-toc-label="<strong>getitem</strong>(key)" }</h3>
 <p>Returns value for one key, or UDict for multiply keys provided with slice.</p>
 <p>Arguments:</p>
 <h4 id="key-kt-int-slice"><code>key: KT | int | slice</code></h4>
@@ -1022,7 +1689,7 @@ all ways, use <a href="#get"><code class="language-py highlight"><span class="n"
 </span></code></pre></div>
 </div>
 </div>
-<h3 id="__setitem__key-kt-int-slice-value-vt-listvt-tuplevt">__setitem__(key: <abbr title="Key type">KT</abbr> | int | slice, value: <abbr title="Value type">VT</abbr> | list[<abbr title="Value type">VT</abbr>] | tuple[<abbr title="Value type">VT</abbr>])</h3>
+<h3 id="__setitem__key-kt-int-slice-value-vt-listvt-tuplevt-data-toc-labelsetitemkey-value">__setitem__(key: <abbr title="Key type">KT</abbr> | int | slice, value: <abbr title="Value type">VT</abbr> | list[<abbr title="Value type">VT</abbr>] | tuple[<abbr title="Value type">VT</abbr>]) { data-toc-label="<strong>setitem</strong>(key, value)" }</h3>
 <p>Sets value or values to given key or keys.</p>
 <h4 id="key-kt-int-slice_1"><code>key: KT | int | slice</code></h4>
 <p>Value's key or keys to set. This argument is the same with <a href="#key-kt-int-slice"><code>key</code> argument in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code> method</a></p>
@@ -1037,18 +1704,18 @@ all ways, use <a href="#get"><code class="language-py highlight"><span class="n"
 </span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: &#39;hello&#39;, &#39;hi&#39;: &#39;world&#39;}</span>
 </span></code></pre></div>
 </div>
-<h3 id="__delitem__key-kt-int-slice">__delitem__(key: <abbr title="Key type">KT</abbr> | int | slice)</h3>
+<h3 id="__delitem__key-kt-int-slice-data-toc-labeldelitemkey">__delitem__(key: <abbr title="Key type">KT</abbr> | int | slice) { data-toc-label="<strong>delitem</strong>(key)" }</h3>
 <p>Deletes items with given key or keys</p>
 <h4 id="key-kt-int-slice_2"><code>key: KT | int | slice</code></h4>
 <p>Item 's key or keys to delete. This argument is the same with <a href="#key-kt-int-slice"><code>key</code> argument in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code> method</a></p>
-<h3 id="__len__-int">__len__() -&gt; int</h3>
+<h3 id="__len__-int-data-toc-labellen">__len__() -&gt; int { data-toc-label="<strong>len</strong>()" }</h3>
 <p>Returns length of UDict</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>d = UDict(hello=1, hi=2)
 print(len(d)) # 2</p>
 </div>
-<h3 id="__iter__-iteratortuplekt-vt">__iter__() -&gt; Iterator[tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>]]</h3>
+<h3 id="__iter__-iteratortuplekt-vt-data-toc-labeliter">__iter__() -&gt; Iterator[tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>]] { data-toc-label="<strong>iter</strong>()" }</h3>
 <p>Iterate UDict. The equivalent of <code class="language-py highlight"><span class="n">items</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span></code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -1056,7 +1723,7 @@ print(len(d)) # 2</p>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\n</span><span class="s2">Value: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Prints all keys and its values.</span>
 </span></code></pre></div>
 </div>
-<h3 id="__bool__-bool">__bool__() -&gt; bool</h3>
+<h3 id="__bool__-bool-data-toc-labelbool">__bool__() -&gt; bool { data-toc-label="<strong>bool</strong>()" }</h3>
 <p>Returns that UDict is not empty. The equivalent of <code class="language-py highlight"><span class="ow">not</span> <span class="n">is_empty</span><span class="p">()</span></code></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
