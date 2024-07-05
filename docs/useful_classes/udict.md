@@ -27,10 +27,10 @@ class UDict(*, default: CDV, **kwargs: VT)
 !!! note "UDict as generic"
     You can use `UDict` as `Generic`, because of it, there are 3 `TypeVar`s: KT, VT, CDV.
 
-    KT and VT is key type and value type. In inbuilt `dict` there are KT and VT type vars.
-    CDV is class defaul value.
+    KT and VT are key type and value type. In inbuilt `dict` there are KT and VT type vars.
+    CDV is class default value.
 
-    In this documentation KT, VT and CDV will be using in methods.
+    In this documentation KT, VT and CDV will be used in methods.
 
 Create UDict object. If `default`, when not existent keys is given in
 getting item, method will return `default`.

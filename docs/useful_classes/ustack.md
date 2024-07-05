@@ -9,4 +9,4 @@ tags:
 # class UStack[VT]
 --}
 
-UStack is deprecated in 0.2 and will be deleted in 0.5. Use [`ustl.Stack`](../uSTL/stack.md) class instead.
+UStack is deprecated in version 0.2 and will be deleted in version 0.5. Use [`uSTL.Stack`](../uSTL/stack.md) class instead.

@@ -4,4 +4,4 @@
 `uSTL` package is ...
 --}
 
-Inder dev!
+Under development!
