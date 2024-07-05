@@ -1,5 +1,10 @@
 name: Branch Deleted
+
 on: delete
+
+permissions:
+  contents: write
+
 jobs:
   delete:
     if: github.event.ref_type == 'branch'
