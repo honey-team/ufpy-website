@@ -6,10 +6,11 @@ repo_name: honey-team/ufpy
 
 theme:
   name: material
+  logo: assets/images/logo.png
   features:
     - content.code.copy
     - content.tooltips
-    - header.autohide
+    - content.code.annotate
     - search.suggest
     - navigation.tabs
     - navigation.tabs.sticky
@@ -19,15 +20,15 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.instant.progress
-    - navigation.instant.prefetch
-    - navigation.instant.preview
     - toc.follow
   icon:
     repo: fontawesome/brands/github
+    annotation: material/plus-circle
     tag:
       typec: material/code-braces
       info: octicons/info-16
       useful: simple/python
+      ustl: material/language-cpp
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -46,6 +47,7 @@ extra:
     information: info
     useful class: useful
     useful feature: useful
+    uSTL: ustl
   version:
     provider: mike
 
@@ -63,6 +65,7 @@ markdown_extensions:
       line_spans: __span
       use_pygments: true
       pygments_lang_class: true
+  - pymdownx.critic
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
