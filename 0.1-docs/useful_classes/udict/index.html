@@ -1945,7 +1945,7 @@ will raise <code>IndexError</code></p>
 </span></code></pre></div>
 </div>
 <h2 id="is_empty-bool">is_empty() -&gt; bool</h2>
-<p><code class="language-py highlight"><span class="kc">True</span></code> if <code>len(UDict) == 0</code> else <code class="language-py highlight"><span class="kc">False</span></code></p>
+<p>Returns <code>True</code> if the UDict is empty (<code>len(UDict) == 0</code>), otherwise returns <code>False</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1983,7 +1983,7 @@ of <code class="language-py highlight"><span class="k">if</span> <span class="nb
 </span></code></pre></div>
 </div>
 <h3 id="__neg__-udictkt-int-float-cdv">__neg__() -&gt; UDict[<abbr title="Key type">KT</abbr>, int | float, <abbr title="Class default value">CDV</abbr>]</h3>
-<p>Does all values (if they support <code>-</code> operator) to they's opposite numbers.</p>
+<p>Negates all values (if they support the <code>-</code> operator) to their opposite numbers.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
@@ -2005,21 +2005,22 @@ of <code class="language-py highlight"><span class="k">if</span> <span class="nb
 </span></code></pre></div>
 </div>
 <h3 id="__getitem__key-kt-int-slice-udictkt-vt-dv-vt">__getitem__(key: <abbr title="Key type">KT</abbr> | int | slice) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, DV] | <abbr title="Value type">VT</abbr></h3>
-<p>Returns value for one key, or UDict for multiply keys provided with slice.</p>
+<p>Returns the value for a single key, or a UDict for multiple keys provided with a slice.</p>
+<div class="admonition warning">
+<p class="admonition-title">Indexes starting at 1.</p>
+</div>
 <p>Arguments:</p>
 <h4 id="key-kt-int-slice"><code>key: KT | int | slice</code></h4>
 <p>Value's key or index to get or values's indexes slice to get.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">])</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </span></code></pre></div>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Using indexes and slices</p>
-<p>You can use indexes and slices in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Indexes starting at 1.</p>
-</div>
+<p class="admonition-title">Using indexes</p>
+<p>You can also use indexes in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code>.</p>
 <div class="admonition failure">
 <p class="admonition-title">Failure</p>
 <p>Keep in mind that indexes are using after the keys with the given value were not found.</p>
@@ -2035,128 +2036,118 @@ all ways, use <a href="#get"><code class="language-py highlight"><span class="n"
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 9</span>
 </span></code></pre></div>
 </div>
-<p>Slices can be used only with indexes. If slice is provided, method will return part of UDict from <code>start</code> index to
-<code>end</code> index with <code>step</code>.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">world</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">ufpy</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># u{&#39;hello&#39;: 1, &#39;hi&#39;: 3, &#39;world&#39;: 9}</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># u{&#39;hi&#39;: 3, &#39;world&#39;: 9}</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># u{&#39;hello&#39;: 1, &#39;world&#39;: 9}</span>
-</span></code></pre></div>
-</div>
 </div>
 <h3 id="__setitem__key-kt-int-slice-value-vt-listvt-tuplevt">__setitem__(key: <abbr title="Key type">KT</abbr> | int | slice, value: <abbr title="Value type">VT</abbr> | list[<abbr title="Value type">VT</abbr>] | tuple[<abbr title="Value type">VT</abbr>])</h3>
-<p>Sets value or values to given key or keys.</p>
+<p>Sets the value or values for the given key or keys.</p>
 <h4 id="key-kt-int-slice_1"><code>key: KT | int | slice</code></h4>
 <p>Value's key or keys to set. This argument is the same with <a href="#key-kt-int-slice"><code>key</code> argument in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code> method</a></p>
 <h4 id="value-vt-listvt-tuplevt"><code>value: VT | list[VT] | tuple[VT]</code></h4>
 <p>Value or values to set.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;hi&#39;</span><span class="p">])</span> <span class="c1"># &#39;hello&#39;</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">d</span><span class="p">[:]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: &#39;hello&#39;, &#39;hi&#39;: &#39;world&#39;}</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;hi&#39;</span><span class="p">])</span> <span class="c1"># &#39;hello&#39;</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">d</span><span class="p">[:]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: &#39;hello&#39;, &#39;hi&#39;: &#39;world&#39;}</span>
 </span></code></pre></div>
 </div>
 <h3 id="__delitem__key-kt-int-slice">__delitem__(key: <abbr title="Key type">KT</abbr> | int | slice)</h3>
-<p>Deletes items with given key or keys</p>
+<p>Deletes items with the given key or keys.</p>
 <h4 id="key-kt-int-slice_2"><code>key: KT | int | slice</code></h4>
-<p>Item 's key or keys to delete. This argument is the same with <a href="#key-kt-int-slice"><code>key</code> argument in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code> method</a></p>
+<p>Item's key or keys to delete. This argument is the same with <a href="#key-kt-int-slice"><code>key</code> argument in <code class="language-py highlight"><span class="fm">__getitem__</span><span class="p">()</span></code> method</a>.</p>
 <h3 id="__len__-int">__len__() -&gt; int</h3>
-<p>Returns length of UDict</p>
+<p>Returns the length of the UDict.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>d = UDict(hello=1, hi=2)
 print(len(d)) # 2</p>
 </div>
 <h3 id="__iter__-iteratortuplekt-vt">__iter__() -&gt; Iterator[tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>]]</h3>
-<p>Iterate UDict. The equivalent of <code class="language-py highlight"><span class="n">items</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span></code>.</p>
+<p>Iterate over the UDict. The equivalent of <code class="language-py highlight"><span class="n">items</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span></code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\n</span><span class="s2">Value: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Prints all keys and its values.</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\n</span><span class="s2">Value: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Prints all keys and its values.</span>
 </span></code></pre></div>
 </div>
 <h3 id="__bool__-bool">__bool__() -&gt; bool</h3>
-<p>Returns that UDict is not empty. The equivalent of <code class="language-py highlight"><span class="ow">not</span> <span class="n">is_empty</span><span class="p">()</span></code></p>
+<p>Returns whether the UDict is not empty. The equivalent of <code class="language-py highlight"><span class="ow">not</span> <span class="n">is_empty</span><span class="p">()</span></code></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">if</span> <span class="n">d</span><span class="p">:</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D is not empty!&quot;</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">if</span> <span class="n">d</span><span class="p">:</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D is not empty!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <h3 id="__contains__item-tuplekt-vt-listkt-vt-kt-bool">__contains__(item: tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | list[<abbr title="Key type">KT</abbr> | <abbr title="Value type">VT</abbr>] | <abbr title="Key type">KT</abbr>) -&gt; bool</h3>
-<p>Check that item or key in UDict.</p>
+<p>Checks whether the item or key is in the UDict.</p>
 <p>Arguments:</p>
 <h4 id="item-tuplekt-vt-listkt-vt-kt">item: tuple[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | list[<abbr title="Key type">KT</abbr> | <abbr title="Value type">VT</abbr>] | <abbr title="Key type">KT</abbr></h4>
 <p>Item or item's key.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">if</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">if</span> <span class="s1">&#39;key&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">if</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">if</span> <span class="s1">&#39;key&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="o">...</span>
 </span></code></pre></div>
 </div>
 <h3 id="__repr__-str">__repr__() -&gt; str</h3>
-<p>Returns string presentation of UDict. Because of it, UDict can be used in <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> and <code class="language-py highlight"><span class="nb">repr</span><span class="p">()</span></code></p>
+<p>Returns the string representation of the UDict. This allows the UDict to be used in <code>print()</code> and <code>repr()</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: 1}</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="c1"># Same</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># u{&#39;hello&#39;: 1}</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="c1"># Same</span>
 </span></code></pre></div>
 </div>
 <h3 id="__hash__-int">__hash__() -&gt; int</h3>
-<p>Returns hash for <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span></code>. The equivalent of <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span></code></p>
+<p>Returns the hash for <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span></code>. The equivalent of <code class="language-py highlight"><span class="nb">repr</span><span class="p">(</span><span class="n">UDict</span><span class="p">)</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span></code>.</p>
 <h3 id="__cmp__other-dictkt-vt-udictkt-vt-cdv-int">__cmp__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; int</h3>
-<p>Used by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code>, which generates compare magic methods, like <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> operators.</p>
-<p>Comparing UDicts is comparing their lengths, except of <a href=""><code class="language-py highlight"><span class="fm">__eq__</span><span class="p">()</span></code></a>.</p>
+<p>Used by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code>, which generates comparison magic methods like <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> operators.</p>
+<p>Comparing UDicts involves comparing their lengths, except for <code class="language-py highlight"><span class="fm">__eq__</span><span class="p">()</span></code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">d2</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
+</span></code></pre></div>
+</div>
+<h3 id="__eq__other-dictkt-vt-udictkt-vt-cdv-bool">__eq__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; bool</h3>
+<p>Checks whether UDicts are the same. (Overrides generated by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code> magic method)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">d2</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># True</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
-</span></code></pre></div>
-</div>
-<h3 id="__eq__other-dictkt-vt-udictkt-vt-cdv-bool">__eq__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; bool</h3>
-<p>Checks that UDicts are same. (Overrides generated by <code class="language-py highlight"><span class="nd">@cmp_generator</span></code> magic method)</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">d2</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="c1"># True</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span> <span class="c1"># False</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="c1"># True</span>
 </span></code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use dict to compare with UDict. Method will automatically generate UDict from this dict
-<div class="language-py highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># True</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># True</span>
 </span></code></pre></div></p>
 </div>
 <h3 id="__add__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv">__add__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
-<p>Add dictionary or UDict's dictionary to UDict's dictionary. This method also have <code>r</code> and <code>i</code> version (<code>+=</code>)</p>
+<p>Adds the dictionary or UDict's dictionary to the UDict's dictionary. This method also has <code>r</code> and <code>i</code> versions (<code>+=</code>).</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">({</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">d</span> <span class="o">+=</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="nb">print</span><span class="p">({</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="n">d</span> <span class="o">+=</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </span></code></pre></div>
 </div>
 <h3 id="__sub__other-dictkt-vt-udictkt-vt-cdv-udictkt-vt-cdv">__sub__(other: dict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>] | UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]) -&gt; UDict[<abbr title="Key type">KT</abbr>, <abbr title="Value type">VT</abbr>, <abbr title="Class default value">CDV</abbr>]</h3>
-<p>Substract dictionary or UDict's dictionary from UDict's dictionary. This method also have <code>r</code> and <code>i</code> version (<code>-=</code>)</p>
+<p>Subtracts the dictionary or UDict's dictionary from the UDict's dictionary. This method also has <code>r</code> and <code>i</code> versions (<code>-=</code>).</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># u{&#39;hi&#39;: 2}</span>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="n">d</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># Same</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># u{&#39;hi&#39;: 2}</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">d</span> <span class="o">-=</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># Same</span>
 </span></code></pre></div>
 </div>
 <h3 id="__mul__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportsmul-cdv">__mul__(other: dict[<abbr title="Key type">KT</abbr>, float | int] | UDict[<abbr title="Key type">KT</abbr>, float | int, DV] | float | int) -&gt; UDict[<abbr title="Key type">KT</abbr>, SupportsMul, <abbr title="Class default value">CDV</abbr>]</h3>
@@ -2169,9 +2160,9 @@ This method also have <code>r</code> and <code>i</code> version (<code>*=</code>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 2, &#39;hi&#39;: 4}</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 6}</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 2, &#39;hi&#39;: 4}</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 6}</span>
 </span></code></pre></div>
 </div>
 <h3 id="__truediv__other-dictkt-float-int-udictkt-float-int-dv-float-int-udictkt-supportstruediv-cdv">__truediv__(other: dict[<abbr title="Key type">KT</abbr>, float | int] | UDict[<abbr title="Key type">KT</abbr>, float | int, DV] | float | int) -&gt; UDict[<abbr title="Key type">KT</abbr>, SupportsTrueDiv, <abbr title="Class default value">CDV</abbr>]</h3>
@@ -2183,9 +2174,9 @@ but with divide operator (<code>/</code>).</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 0.5, &#39;hi&#39;: 1}</span>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 0.5}</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">UDict</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># {&#39;hello&#39;: 0.5, &#39;hi&#39;: 1}</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span> <span class="c1"># {&#39;hello&#39;: 1, &#39;hi&#39;: 0.5}</span>
 </span></code></pre></div>
 </div>
 
