@@ -36,4 +36,5 @@ jobs:
 #        run: mike delete -p ${{ steps.extract_branch.outputs.branch }}
         run: |
           mike deploy -p --allow-empty --update-aliases ${{ steps.extract_branch.outputs.branch }} latest
-          mike set-default --push main
+          mike delete -p 0.1-docs
+          mike set-default -p main
