@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/type_checking/protocols/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/type_checking/type_alias/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/uSTL/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/uSTL/stack/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/useful_classes/udict/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/useful_classes/ustack/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://honey-team.github.io/ufpy/move-examples/useful_features/generators/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+</urlset>
