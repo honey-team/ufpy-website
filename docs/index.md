@@ -33,20 +33,49 @@ To install `ufpy`, you need `python 3.12+` and `pip`.
 After installing, use this command in your `cmd`/`bash` terminal:
 
 === "You have one python version"
-    ```shell
-    pip install ufpy
-    # or
-    python -m pip install ufpy
-    # or
-    py -m pip install ufpy
-    ```
+    === "WIndows"
+        ```shell
+        pip install ufpy
+        ```
+    === "Linux"
+        In Linux there isn't abillity to install packages globally (except Fedora, you can use `pip3`). But you can create `venv`!
+        ```shell
+        # If you haven't venv package -> install it
+        sudo apt install python3.12-venv # On Debian, replace 3.12 with your version
+        sudo dnf install python3.12-venv # On Fedora
+
+        # Create venv
+        python3.12 -m venv venv # replace 3.12 with your version
+        ```
+        Then activate it and install `ufpy`!
+        ```shell
+        source venv/bin/activate
+        pip install ufpy
+        ```
+
 
 === "Several versions"
-    ```shell
-    python -3.12 -m pip install ufpy
-    # or
-    py -3.12 -m pip install ufpy
-    ```
+    === "Windows"
+        ```shell
+        python -3.12 -m pip install ufpy
+        # or
+        py -3.12 -m pip install ufpy
+        ```
+    === "Linux"
+        Create `venv` with specific python version.
+        ```shell
+        # If you haven't venv package -> install it
+        sudo apt install python3.12-venv # On Debian, replace 3.12 with your version
+        sudo dnf install python3.12-venv # On Fedora
+
+        # Create venv
+        python3.12 -m venv venv # replace 3.12 with your version
+        ```
+        Then activate it and install `ufpy`!
+        ```shell
+        source venv/bin/activate
+        pip install ufpy
+        ``` 
 
 ## Importing and writing some code
 
