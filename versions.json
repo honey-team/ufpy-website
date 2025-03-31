@@ -2,13 +2,13 @@
   {
     "version": "move-examples",
     "title": "move-examples",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "main",
     "title": "main",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
