@@ -1,10 +1,5 @@
 [
   {
-    "version": "move-examples",
-    "title": "move-examples",
-    "aliases": []
-  },
-  {
     "version": "main",
     "title": "main",
     "aliases": [
